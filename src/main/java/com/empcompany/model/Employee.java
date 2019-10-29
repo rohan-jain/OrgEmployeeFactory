@@ -78,10 +78,10 @@ public class Employee
 	{}
     public void setSalary()
     {}
-    public Employee builder()
-    {
-    	return this;
-    }
+//    public Employee builder()
+//    {
+//    	return this;
+//    }
     
 }
 

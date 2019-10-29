@@ -26,7 +26,8 @@ public class EmployeeServiceImpl implements EmployeeService
 		{
 			if(department.getDepartmentName().equals(employee.getDepartment().getDepartmentName()))
 			{
-				Employee emp=EmployeeFactory.getEmployee(employee.getDepartment().getDepartmentName()).builder();
+//				Employee emp=EmployeeFactory.getEmployee(employee.getDepartment().getDepartmentName()).builder();
+				Employee emp=EmployeeFactory.getEmployee(employee.getDepartment().getDepartmentName());
 				emp.setId(department.getEmployees().isEmpty()?1:(department.getEmployees().get(department.getEmployees().size()-1).getId())+1);
 				emp.setMobile(employee.getMobile()).setName(employee.getName()).setDepartment(employee.getDepartment());
 				department.getEmployees().add(emp);
