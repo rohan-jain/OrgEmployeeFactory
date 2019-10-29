@@ -2,9 +2,12 @@ package com.empcompany.model;
 
 import org.springframework.stereotype.Component;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
+@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@jacksonId")
 @Component
-public class Employee 
+public class Employee
 {
     protected int id;
     protected String name;
@@ -12,8 +15,9 @@ public class Employee
     protected float Salary;
     protected float hours;
     protected float rate;
-    
-    public Department getDepartment() {
+
+	
+	public Department getDepartment() {
 		return department;
 	}
 	public void setDepartment(Department department) {

@@ -1,11 +1,19 @@
 package com.empcompany.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
+@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@jacksonId")
 public class SalesEmployee extends Employee
 {
     protected float hours = 7;
     protected float rate = 8.23f;
     protected float Salary = hours*rate*7;
 
+    public SalesEmployee(Department department, String mobile, String name) {
+    	this.mobile = mobile;
+    	this.name = name;
+	}
 
     @Override
 	public float getHours() {

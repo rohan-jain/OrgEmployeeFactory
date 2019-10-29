@@ -1,20 +1,21 @@
 package com.empcompany.factory;
 
+import com.empcompany.model.Department;
 import com.empcompany.model.Employee;
 import com.empcompany.model.HREmployee;
 import com.empcompany.model.SalesEmployee;
 
 public class EmployeeFactory
 {
-	public static Employee getEmployee(String departmentName)
+	public static Employee getEmployee(Department department, String mobile, String name)
 	{
-		if(departmentName.equals("hr"))
+		if(department.getDepartmentName().equals("hr"))
 		{
-			return new HREmployee();
+			return new HREmployee(department, mobile, name);
 		}
-		else if(departmentName.equals("sales"))
+		else if(department.getDepartmentName().equals("sales"))
 		{
-			return new SalesEmployee();
+			return new SalesEmployee(department, mobile, name);
 		}
 		else
 		{

@@ -20,16 +20,35 @@ public class EmployeeServiceImpl implements EmployeeService
 	Organization organization;
 	
 	@Override
-	public void addEmployee(Employee employee) 
+	public void addEmployee(Employee employee)
 	{
 		for(Department department:organization.getDepartments())
 		{
 			if(department.getDepartmentName().equals(employee.getDepartment().getDepartmentName()))
 			{
 //				Employee emp=EmployeeFactory.getEmployee(employee.getDepartment().getDepartmentName()).builder();
-				Employee emp=EmployeeFactory.getEmployee(employee.getDepartment().getDepartmentName());
+				Employee emp=EmployeeFactory.getEmployee(department,
+															employee.getMobile(),
+															employee.getName()
+															);
+				
 				emp.setId(department.getEmployees().isEmpty()?1:(department.getEmployees().get(department.getEmployees().size()-1).getId())+1);
-				emp.setMobile(employee.getMobile()).setName(employee.getName()).setDepartment(employee.getDepartment());
+	
+//				if(employee.getMobile() != null) {
+//					emp.setMobile(employee.getMobile());
+//				}
+//				
+//				if(employee.getName() != null) {
+//					emp.setName(employee.getName());
+//				}
+//				
+//				if(employee.getDepartment() != null) {
+//					emp.setDepartment(employee.getDepartment());
+//				}
+//				
+				
+//				emp.setTestNullInt(employee.getTestNullInt());
+//				emp.setTestNullString(employee.getTestNullString());
 				department.getEmployees().add(emp);
 			}
 		}

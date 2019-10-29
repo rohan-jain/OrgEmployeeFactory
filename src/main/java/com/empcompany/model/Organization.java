@@ -1,12 +1,17 @@
 package com.empcompany.model;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
+@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@jacksonId")
 @Component
-public class Organization 
+public class Organization
 {
 	private int organizationId=1;
 	private String organizationName="Google";
