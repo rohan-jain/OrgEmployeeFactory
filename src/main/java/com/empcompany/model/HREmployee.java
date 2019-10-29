@@ -6,9 +6,9 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 @JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@jacksonId")
 public class HREmployee extends Employee
 {
-	protected float hours = 9;
-    protected float rate = 9.23f;
-    protected float Salary = hours*rate*7;
+	protected Float hours = 9.0f;
+    protected Float rate = 9.23f;
+    protected Float Salary = hours*rate*7;
 	
     public HREmployee(Department department, String mobile, String name) {
     	this.department = department;
@@ -17,32 +17,32 @@ public class HREmployee extends Employee
 	}
 	
 	@Override
-    public float getHours() {
+    public Float getHours() {
 		return hours;
 	}
 
 	@Override
-	public void setHours(float hours) {
+	public void setHours(Float hours) {
 		this.hours = hours;
 	}
 
 	@Override
-	public float getRate() {
+	public Float getRate() {
 		return rate;
 	}
 
 	@Override
-	public void setRate(float rate) {
+	public void setRate(Float rate) {
 		this.rate = rate;
 	}
 
 	@Override
-	public float getSalary() {
+	public Float getSalary() {
 		return Salary;
 	}
 
 	@Override
-	public void setSalary(float salary) {
+	public void setSalary(Float salary) {
 		Salary = salary;
 	}
 

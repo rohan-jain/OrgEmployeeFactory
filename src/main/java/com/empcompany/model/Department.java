@@ -1,6 +1,5 @@
 package com.empcompany.model;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,11 +10,35 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Component
 @JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@jacksonId")
-public class Department implements Serializable
+public class Department
 {
 	private int departmentId;
 	private String departmentName;
+	
 	private List<Employee> employees=new ArrayList<Employee>();
+	
+
+    public enum DepartmentNames {
+        HR_DEPT("HR"),
+        SALES_DEPT("SALES");
+
+        private final String text;
+
+        /**
+         * @param text
+         */
+        DepartmentNames(final String text) {
+            this.text = text;
+        }
+
+        /* (non-Javadoc)
+         * @see java.lang.Enum#toString()
+         */
+        @Override
+        public String toString() {
+            return text;
+        }
+    }
 	
 	public List<Employee> getEmployees() {
 		return employees;

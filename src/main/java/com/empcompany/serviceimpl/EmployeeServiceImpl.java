@@ -32,8 +32,23 @@ public class EmployeeServiceImpl implements EmployeeService
 															employee.getName()
 															);
 				
+				
 				emp.setId(department.getEmployees().isEmpty()?1:(department.getEmployees().get(department.getEmployees().size()-1).getId())+1);
-	
+				
+				
+				if(employee.getHours() != null) {
+					emp.setHours(employee.getHours());
+				}
+				
+				if(employee.getRate() != null) {
+					emp.setHours(employee.getRate());
+				}
+				
+				if(employee.getSalary() != null) {
+					emp.setHours(employee.getSalary());
+				}
+				
+				
 //				if(employee.getMobile() != null) {
 //					emp.setMobile(employee.getMobile());
 //				}

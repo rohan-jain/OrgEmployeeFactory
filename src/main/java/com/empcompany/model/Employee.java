@@ -12,24 +12,25 @@ public class Employee
     protected int id;
     protected String name;
     protected String mobile;
-    protected float Salary;
-    protected float hours;
-    protected float rate;
+    protected Float Salary;
+    protected Float hours;
+    protected Float rate;
 
-	
+    
+    
 	public Department getDepartment() {
 		return department;
 	}
 	public void setDepartment(Department department) {
 		this.department = department;
 	}
-	public void setSalary(float salary) {
-		Salary = salary;
+	public void setSalary(Float salary) {
+		this.Salary = salary;
 	}
-	public void setHours(float hours) {
+	public void setHours(Float hours) {
 		this.hours = hours;
 	}
-	public void setRate(float rate) {
+	public void setRate(Float rate) {
 		this.rate = rate;
 	}
 	protected Department department;
@@ -63,15 +64,15 @@ public class Employee
 		return this;
 	}
 	
-	public float getSalary() {
+	public Float getSalary() {
 		return Salary;
 	}
 	
-	public float getRate() {
+	public Float getRate() {
 		return rate;
 	}
 	
-	public float getHours() 
+	public Float getHours() 
 	{
 		return hours;
 	}
