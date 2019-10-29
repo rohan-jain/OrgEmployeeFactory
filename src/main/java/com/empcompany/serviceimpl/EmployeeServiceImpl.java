@@ -61,6 +61,7 @@ public class EmployeeServiceImpl implements EmployeeService
 		List<Employee> employees=new ArrayList<Employee>();
 		for(Department dept:organization.getDepartments())
 		{
+//			Employee testEm = dept.getEmployees().get(0);
 			employees.addAll(dept.getEmployees());
 		}
 		return employees;

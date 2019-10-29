@@ -2,28 +2,41 @@ package com.empcompany.model;
 
 public class HREmployee extends Employee
 {
-    protected float hours = 9;
+	protected float hours = 9;
     protected float rate = 9.23f;
-    protected float Salary = hours*rate;
+    protected float Salary = hours*rate*7;
 	
 	
 	@Override
-	public void setHours() 
-	{
-		this.hours=9;
+    public float getHours() {
+		return hours;
 	}
 
 	@Override
-	public void setRate() 
-	{
-		this.rate=9.23f;
+	public void setHours(float hours) {
+		this.hours = hours;
 	}
 
 	@Override
-	public void setSalary() 
-	{
-		this.Salary=this.rate*this.hours;
+	public float getRate() {
+		return rate;
 	}
+
+	@Override
+	public void setRate(float rate) {
+		this.rate = rate;
+	}
+
+	@Override
+	public float getSalary() {
+		return Salary;
+	}
+
+	@Override
+	public void setSalary(float salary) {
+		Salary = salary;
+	}
+
 
 //	@Override
 //	public Employee builder() 
