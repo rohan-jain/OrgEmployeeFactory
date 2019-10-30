@@ -10,11 +10,11 @@ public class EmployeeFactory
 {
 	public static Employee getEmployee(Department department, String mobile, String name)
 	{
-		if(department.getDepartmentName().equals(DepartmentNames.HR_DEPT.toString()))
+		if(department.getDepartmentName() == DepartmentNames.HR_DEPT)
 		{
 			return new HREmployee(department, mobile, name);
 		}
-		else if(department.getDepartmentName().equals(DepartmentNames.SALES_DEPT.toString()))
+		else if(department.getDepartmentName() == DepartmentNames.SALES_DEPT)
 		{
 			return new SalesEmployee(department, mobile, name);
 		}

@@ -13,14 +13,14 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 public class Department
 {
 	private int departmentId;
-	private String departmentName;
+	private DepartmentNames departmentName;
 	
 	private List<Employee> employees=new ArrayList<Employee>();
 	
 
     public enum DepartmentNames {
-        HR_DEPT("HR"),
-        SALES_DEPT("SALES");
+        HR_DEPT("HR_DEPT"),
+        SALES_DEPT("SALES_DEPT");
 
         private final String text;
 
@@ -52,15 +52,23 @@ public class Department
 		this.departmentId = departmentId;
 	}
 	
-	public String getDepartmentName() {
-		return departmentName;
-	}
-	
-	public void setDepartmentName(String departmentName) {
-		this.departmentName = departmentName;
-	}
+//	public String getDepartmentName() {
+//		return departmentName;
+//	}
+//	
+//	public void setDepartmentName(String departmentName) {
+//		this.departmentName = departmentName;
+//	}
 
 	public void setEmployees(List<Employee> employees) {
 		this.employees = employees;
+	}
+
+	public DepartmentNames getDepartmentName() {
+		return departmentName;
+	}
+
+	public void setDepartmentName(DepartmentNames departmentName) {
+		this.departmentName = departmentName;
 	}
 }

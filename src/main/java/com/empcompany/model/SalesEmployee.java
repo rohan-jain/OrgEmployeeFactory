@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 @JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@jacksonId")
 public class SalesEmployee extends Employee
 {
+	// Optional Parameters
     protected Float hours = 7.0f;
     protected Float rate = 8.23f;
     protected Float Salary = hours*rate*7;

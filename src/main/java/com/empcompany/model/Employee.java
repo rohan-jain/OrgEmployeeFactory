@@ -8,10 +8,15 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 @JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@jacksonId")
 @Component
 public class Employee
-{
+{	
+	
     protected int id;
+    
+    // Mandatory parameters
     protected String name;
     protected String mobile;
+    
+    // Optional Parameters
     protected Float Salary;
     protected Float hours;
     protected Float rate;
